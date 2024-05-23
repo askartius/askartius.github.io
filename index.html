@@ -3,44 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Scrolling Effect</title>
+
+        <title>Askartius' website</title>
+
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
         <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 200vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 50px;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        .reveal-text {
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        .reveal-text.reveal {
-            opacity: 1;
-        }
+            :root {
+                font-family: Inter, sans-serif;
+                font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+                align-content: center;
+            }
+            @supports (font-variation-settings: normal) {
+                :root { font-family: InterVariable, sans-serif; }
+            }
+            .logo {
+                font-size: 256px;
+                font-weight: 800;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
-        <div class="reveal-text">Askartius</div>
-
-        <script>
-        window.addEventListener('scroll', revealText);
-
-        function revealText() {
-            const revealElement = document.querySelector('.reveal-text');
-            const revealPosition = revealElement.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (revealPosition < windowHeight / 2) {
-            revealElement.classList.add('reveal');
-            }
-        }
-        </script>
+        <h1 class="logo">ASKARTIUS</h1>
     </body>
 </html>
